@@ -1,0 +1,38 @@
+# Environment files
+.env
+.env.local
+
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+oracle
+test-oracle
+
+# Go test coverage
+*.out
+coverage.txt
+
+# Go vendor
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
