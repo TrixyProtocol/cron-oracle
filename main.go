@@ -50,13 +50,9 @@ func NewOracleUpdater(privateKeyHex string, accountAddress string, databaseURL s
 		return nil, fmt.Errorf("failed to connect to Flow: %w", err)
 	}
 
-	privateKey, err := crypto.DecodePrivateKeyHex(crypto.ECDSA_secp256k1, privateKeyHex)
+	privateKey, err := crypto.DecodePrivateKeyHex(crypto.ECDSA_P256, privateKeyHex)
 	if err != nil {
-		log.Printf("⚠️  Failed to decode with secp256k1, trying P256: %v", err)
-		privateKey, err = crypto.DecodePrivateKeyHex(crypto.ECDSA_P256, privateKeyHex)
-		if err != nil {
-			return nil, fmt.Errorf("failed to decode private key: %w", err)
-		}
+		return nil, fmt.Errorf("failed to decode private key: %w", err)
 	}
 
 	hashAlgo := crypto.SHA3_256
