@@ -36,3 +36,5 @@ logs/
 # Temporary files
 tmp/
 temp/
+
+/cron-oracle
